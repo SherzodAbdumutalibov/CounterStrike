@@ -28,5 +28,5 @@ class Terror:
             target.health = target.health - damage
 
             if target.health <= 0:
-                print(target.name, 'убит!')
-                print(self.health)
+                print('\033[34m' + target.name, '\033[37m', 'убит!')
+                print('Осталось здоровья', '\033[31m', self.health, '\033[37m')
