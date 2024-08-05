@@ -1,12 +1,10 @@
-from ct import ContTerr
-from t import Terror 
-from shoot import shoot
-from gun import choose_gun
+from SpecialOPS import SpecialOPS
+from Terror import Terror 
 
-person_1 = ContTerr()
-person_2 = Terror()
+police = SpecialOPS('Police')
+terror = Terror('Terrorist')
 
-person_1.info()
-person_2.info()
-
-person_1.shoot(person_2)
+terror.shoot(police)
+police.shoot(terror)
+terror.shoot(police)
+police.shoot(terror)
