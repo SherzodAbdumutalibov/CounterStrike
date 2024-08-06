@@ -1,13 +1,20 @@
 from shootable import Shootable
+from Person import Person
 
-class Terror(Shootable):    
+class Terrorist(Person, Shootable):    
 
-    def __init__(self, name:str='ZeroSugar', health:int=100, gun:str='glock', bomb:bool=False, money:int=800):
-        self.name = name
-        self.health = health
-        self.gun = gun
-        self.bomb = bomb
-        self.money = money
-
-    def info(self):
-        print(self.__dict__)
+    def pickup_bomb(self): # Подобрать бомбу
+        self.__bomb = True
+        print('Я подобрал бомбу')
+        
+        ## AttributeError: 'Terrorist' object has no attribute '_Terrorist__bomb'
+        
+        # if self.__bomb == True:
+        #     print('Бомба у меня. Я готов закладывать')
+        # else:
+        #     self.__bomb = True
+        #     print('Я подобрал  бомбу')
+        
+    def throw_bomb(self): # Бросить бомбу
+        self.__bomb = False
+        print('Я бросил бомбу')
