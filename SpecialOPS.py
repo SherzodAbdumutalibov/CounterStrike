@@ -1,4 +1,4 @@
-import random
+from shootable import Shootable
 
 gun_list = {
             'usp': {'head': 91, 'body': 43, 'hl': 34}, 
@@ -8,7 +8,7 @@ gun_list = {
             'm4': {'head': 94, 'body': 41, 'hl': 30}
         }
 
-class SpecialOPS:    
+class SpecialOPS(Shootable):
 
     def __init__(self, name='ColaClassic', health=100, gun='usp', defuse_kit=False, money=800):
         self.name = name
@@ -19,16 +19,3 @@ class SpecialOPS:
             
     def info(self):
         print(self.__dict__)
-
-    def shoot(self, target):
-        if self.health >= 1:
-            hit = random.choice(['head', 'body', 'hl'])
-            global gun_list
-            damage = gun_list[self.gun][hit]
-            target.health = target.health - damage
-
-            if target.health <= 0:
-                print('\033[31m' + target.name, '\033[37m''убит!')
-                print('Осталось здоровья', '\033[34m', self.health, '\033[37m')
-
-        
