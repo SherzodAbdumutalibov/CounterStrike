@@ -14,7 +14,7 @@ class SpecialOPS(Person, Shootable):
         #     self.__defuse_kit = True
         #     print('Купил набор сапера')
         # else:
-        #     print('У меня уже есть киты')     
+        #     print('Киты имеются')     
 
     def throw_dufuse_kit(self):
         self.__defuse_kit = False
