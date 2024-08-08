@@ -1,10 +1,10 @@
 from SpecialOPS import SpecialOPS
-from Terror import Terror
+from Terror import Terrorist
 
 police = SpecialOPS('Police')
-terror = Terror('Terrorist')
+terror = Terrorist('Terrorist')
 
-terror.shoot(police)
 police.shoot(terror)
 terror.shoot(police)
 police.shoot(terror)
+terror.shoot(police)
